@@ -1,12 +1,27 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
     <meta charset="UTF-8">
     <title>lesson3_task2</title>
 </head>
+
 <body>
-   <script>
+    <script>
+        const prices = [350, 900, 1500, 50];
+
+        function countBasketPrice(prices) {
+            let sum = 0;
+            let i;
+            for (i = 0; i < prices.length; i++) {
+                sum += prices[i];
+            }
+            return (sum);
+        }
+        alert(`Общая стоимость товаров в корзине ${countBasketPrice(prices)} руб.`);
+
     </script>
-    
+
 </body>
+
 </html>
