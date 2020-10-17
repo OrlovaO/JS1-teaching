@@ -11,13 +11,12 @@
         const prices = [350, 900, 1500, 50];
 
         function countBasketPrice(prices) {
-            let sum = 0;
-            let i;
-            for (i = 0; i < prices.length; i++) {
-                sum += prices[i];
-            }
-            return (sum);
+            let sum = prices.reduce(function(sum, current) {
+                return sum + current;
+            });
+            return sum;
         }
+
         alert(`Общая стоимость товаров в корзине ${countBasketPrice(prices)} руб.`);
 
     </script>
