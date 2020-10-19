@@ -12,15 +12,28 @@
             let number = prompt('Введите любое целое число от 0 до 999: ');
             let numberInArr = number.split('');
             console.log(numberInArr);
-            if (numberInArr.length == 3) {
+            if (numberInArr.length === 3) {
                 var numInObj = {
                     units: numberInArr[2],
                     dozens: numberInArr[1],
                     hundreds: numberInArr[0]
                 };
+            } else if (numberInArr.length === 2) {
+                var numInObj = {
+                    units: numberInArr[1],
+                    dozens: numberInArr[0],
+                    hundreds: 0
+                };
+            } else if (numberInArr.length === 1) {
+                var numInObj = {
+                    units: numberInArr[0],
+                    dozens: 0,
+                    hundreds: 0
+                };
             } else {
                 alert('Это число больше 999.');
             }
+
             return numInObj;
         }
 
