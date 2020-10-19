@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>lesson4_task1</title>
+</head>
+
+<body>
+    <script>
+        function makeObj() {
+            let number = prompt('Введите любое целое число от 0 до 999: ');
+            let numberInArr = number.split('');
+            console.log(numberInArr);
+            if (numberInArr.length == 3) {
+                var numInObj = {
+                    units: numberInArr[2],
+                    dozens: numberInArr[1],
+                    hundreds: numberInArr[0]
+                };
+            } else {
+                alert('Это число больше 999.');
+            }
+            return numInObj;
+        }
+
+        function display(numInObj) {
+            alert(`Единицы: ${numInObj.units}, десятки: ${numInObj.dozens}, сотни: ${numInObj.hundreds}.`);
+        }
+
+        var objShow = makeObj();
+        display(objShow);
+
+    </script>
+
+</body>
+
+</html>
