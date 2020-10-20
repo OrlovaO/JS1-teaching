@@ -10,7 +10,7 @@
     <script>
         function makeObj() {
             let number = prompt('Введите любое целое число от 0 до 999: ');
-            let numberInArr = number.split('');
+            const numberInArr = number.split('');
             console.log(numberInArr);
             if (numberInArr.length === 3) {
                 var numInObj = {
@@ -22,27 +22,37 @@
                 var numInObj = {
                     units: numberInArr[1],
                     dozens: numberInArr[0],
-                    hundreds: 0
+                    hundreds: 'нет'
                 };
             } else if (numberInArr.length === 1) {
                 var numInObj = {
                     units: numberInArr[0],
-                    dozens: 0,
-                    hundreds: 0
+                    dozens: 'нет',
+                    hundreds: 'нет'
                 };
             } else {
                 alert('Это число больше 999.');
+                var numInObj = {
+                    answer: 'объект пуст'
+                };
+
             }
 
             return numInObj;
         }
 
         function display(numInObj) {
-            alert(`Единицы: ${numInObj.units}, десятки: ${numInObj.dozens}, сотни: ${numInObj.hundreds}.`);
+
+            if (numInObj.answer === 'объект пуст') {
+                alert("объект пуст");
+            } else {
+                alert(`Единицы: ${numInObj.units}, десятки: ${numInObj.dozens}, сотни: ${numInObj.hundreds}.`);
+            }
         }
 
-        var objShow = makeObj();
+        let objShow = makeObj();
         display(objShow);
+        console.log(objShow);
 
     </script>
 
