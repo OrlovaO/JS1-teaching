@@ -37,19 +37,16 @@
                 };
 
             }
-
             return numInObj;
         }
 
         function display(numInObj) {
-
             if (numInObj.answer === 'объект пуст') {
                 alert("объект пуст");
             } else {
                 alert(`Единицы: ${numInObj.units}, десятки: ${numInObj.dozens}, сотни: ${numInObj.hundreds}.`);
             }
         }
-
         let objShow = makeObj();
         display(objShow);
         console.log(objShow);
