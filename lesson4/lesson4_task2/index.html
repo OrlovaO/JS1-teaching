@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Product {
+            code = ''
+            name = ''
+            price = ''
+            constructor(code, name, price) {
+                this.price = price
+                this.name = name
+                this.code = code
+            }
+        } //общий класс продукт для создания продуктов с разными ценами, названиями и кодами на перспективу
+
+        const Apple = new Product(1, 'Apple', 350, ) //создаю объекты разных продуктов с разными ценами и кодами
+        const Tomato = new Product(2, 'Tomato', 900)
+        const Mango = new Product(3, 'Mango', 1500)
+        const Lemon = new Product(4, 'Lemon', 50)
+
+        console.log(Apple)
+        console.log(Tomato)
+        console.log(Mango)
+        console.log(Lemon)
+
+
+        const productsBasket = [Apple, Tomato, Mango, Lemon]; //корзина товаров(продуктовая)
+
+        function countBasketPrice(productsBasket) {
+            const productsPrices = []; //массив для заполнения цен по товарам(продуктам)
+            productsBasket.forEach(Product => {
+                Product.price;
+                productsPrices.push(Product.price); //перебираю объекты товаров(продуктов) в корзине, чтобы достать их цены и заполнить ими новый массив цен
+            });
+            console.log(productsPrices); //вывожу массив с ценами для проверки
+            let sum = productsPrices.reduce(function(sum, current) {
+                return sum + current;
+            }); //считаю сумму цен в массиве с ценами, т.е. стоимость корзины с товарами(продуктами)
+            return sum; //возвращаю стоимость корзины с товарами(продуктами)
+        }
+
+        let sumBasket = countBasketPrice(productsBasket); //создаю переменную для вывода стоимости корзины с товарами(продуктами)
+
+        alert(`Общая стоимость товаров в корзине ${sumBasket} руб.`);
+
+    </script>
+</body>
+
+</html>
